@@ -2,7 +2,7 @@
   "name": "exercise-webpack",
   "version": "1.0.0",
   "description": "This folder contains the exercise materials and code related to the Webpack exercise.",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
