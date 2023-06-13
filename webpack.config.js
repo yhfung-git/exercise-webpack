@@ -6,7 +6,7 @@ module.exports = {
   entry: {
     index: "./src/index.js",
   },
-  devtool: "inline-source-map",
+  devtool: "source-map",
   devServer: {
     static: "./dist",
   },
@@ -16,21 +16,26 @@ module.exports = {
     }),
   ],
   output: {
-    filename: "[name].[contenthash].js",
+    filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
+    assetModuleFilename: "images/[name][ext]",
     clean: true,
     publicPath: "/",
   },
-  optimization: {
-    runtimeChunk: "single",
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: "vendors",
-          chunks: "all",
-        },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
-    },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
+    ],
   },
 };
