@@ -1,16 +1,25 @@
-import "./style.css";
-import "./images/1.jpg";
+import "./styles/main.scss";
+import laughing from "./assets/laughing.svg";
+import generateJoke from "./generateJoke";
 
-const getComponent = async () => {
-  const element = document.createElement("div");
-  const { default: _ } = await import("lodash");
+const laughImg = document.getElementById("laughImg");
+laughImg.src = laughing;
+laughImg.alt = "laughing";
 
-  element.innerHTML = _.join(["Hello", "webpack"], " ");
-  element.classList.add("hello");
+const jokeBtn = document.getElementById("jokeBtn");
+jokeBtn.addEventListener("click", generateJoke);
 
-  return element;
-};
+generateJoke();
 
-getComponent().then((component) => {
-  document.body.appendChild(component);
-});
+// const getComponent = async () => {
+//   const element = document.createElement("div");
+//   const { default: _ } = await import("lodash");
+
+//   element.innerHTML = _.join(["Hello", "webpack"], " ");
+
+//   return element;
+// };
+
+// getComponent().then((component) => {
+//   document.body.appendChild(component);
+// });
