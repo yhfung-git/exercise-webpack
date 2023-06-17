@@ -24,9 +24,6 @@ var generateJoke = function generateJoke() {
     document.getElementById("joke").innerHTML = res.data.joke;
   });
 };
-document.addEventListener("DOMContentLoaded", function () {
-  generateJoke();
-});
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (generateJoke);
 
 /***/ }),
@@ -4699,16 +4696,15 @@ __webpack_require__.r(__webpack_exports__);
 var laughImg = document.getElementById("laughImg");
 laughImg.src = _assets_laughing_svg__WEBPACK_IMPORTED_MODULE_1__;
 laughImg.alt = "laughing";
+var jokeBtn = document.getElementById("jokeBtn");
+jokeBtn.addEventListener("click", _generateJoke__WEBPACK_IMPORTED_MODULE_2__["default"]);
+(0,_generateJoke__WEBPACK_IMPORTED_MODULE_2__["default"])();
 
 // const getComponent = async () => {
 //   const element = document.createElement("div");
-//   const joke = document.createElement("div");
 //   const { default: _ } = await import("lodash");
 
 //   element.innerHTML = _.join(["Hello", "webpack"], " ");
-
-//   joke.innerHTML = generateJoke();
-//   element.appendChild(joke);
 
 //   return element;
 // };
@@ -4720,4 +4716,4 @@ laughImg.alt = "laughing";
 
 /******/ })()
 ;
-//# sourceMappingURL=main.7305812e0972c7cbe164.bundle.js.map
+//# sourceMappingURL=main.b7b0eb24718b737f0ebf.bundle.js.map
