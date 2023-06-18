@@ -1,7 +1,7 @@
 import AlertService from "./alert.service";
 import ComponentService from "./component.service";
-import parseInputs from "./utils/parse-inputs";
 import inputsAreValid from "./utils/inputs-are-valid";
+import parseInputs from "./utils/parse-inputs";
 import webpackImg from "../assets/webpack.svg";
 
 const alertService = new AlertService();
