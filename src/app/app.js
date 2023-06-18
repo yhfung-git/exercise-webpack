@@ -1,11 +1,6 @@
-import AlertService from "./alert.service";
-import ComponentService from "./component.service";
 import inputsAreValid from "./utils/inputs-are-valid";
 import parseInputs from "./utils/parse-inputs";
-import webpackImg from "../assets/webpack.svg";
 
-const alertService = new AlertService();
-const componentService = new ComponentService();
 const run = (alertService, componentService) => {
   alertService.hideErrors();
 
@@ -23,8 +18,4 @@ const run = (alertService, componentService) => {
   });
 };
 
-run(alertService, componentService);
-
-const image = document.getElementById("webpackImg");
-image.src = webpackImg;
-image.alt = "webpack image";
+export default run;
