@@ -9,7 +9,7 @@ const isDevelopment = process.env.NODE_ENV === "development";
 const config = isDevelopment ? devConfig : prodConfig;
 const compiler = webpack(config);
 
-// Tell express to use the webpack-dev-middleware and use the webpack.config.js
+// Tell express to use the webpack-dev-middleware and use the webpack.dev.js / webpack.prod.js
 // configuration file as a base.
 app.use(
   webpackDevMiddleware(compiler, {
