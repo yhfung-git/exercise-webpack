@@ -2,6 +2,7 @@
 import run from "./app/app";
 import AlertService from "./app/alert.service";
 import ComponentService from "./app/component.service";
+import "./main.scss";
 import webpackImg from "./assets/webpack.svg";
 
 const alertService = new AlertService();
@@ -11,7 +12,6 @@ run(alertService, componentService);
 const image = document.getElementById("webpackImg");
 image.src = webpackImg;
 image.alt = "webpack image";
-
 
 // " Exercise 2 "
 
