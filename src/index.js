@@ -1,16 +1,22 @@
 // " Exercise 3 "
+import webpackImg from "./assets/webpack.svg";
+
 const numberOneInput = document.getElementById("numberOne");
 const numberTwoInput = document.getElementById("numberTwo");
 const addValuesButton = document.getElementById("addValues");
 const resultDiv = document.getElementById("result");
 const errorBox = document.getElementById("error");
+const image = document.getElementById("webpackImg");
+
+image.src = webpackImg;
+image.alt = "webpack image";
 
 const parseInputs = (...input) => {
-  return input.map(str => parseInt(str));
+  return input.map((str) => parseInt(str));
 };
 
 const inputsAreValid = (...input) => {
-  return input.every(num => typeof num === "number" && !isNaN(num));
+  return input.every((num) => typeof num === "number" && !isNaN(num));
 };
 
 const handleAdditionError = (inputs, numbers) => {
@@ -44,7 +50,6 @@ addValuesButton.addEventListener("click", () => {
   }
 });
 
-
 // " Exercise 2 "
 
 // import "./styles/main.scss";
@@ -59,7 +64,6 @@ addValuesButton.addEventListener("click", () => {
 // jokeBtn.addEventListener("click", generateJoke);
 
 // generateJoke();
-
 
 // " Exercise 1 "
 
