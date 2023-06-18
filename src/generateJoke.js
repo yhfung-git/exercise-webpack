@@ -1,15 +1,15 @@
-import axios from "axios";
+// import axios from "axios";
 
-const generateJoke = () => {
-  const config = {
-    headers: {
-      Accept: "application/json",
-    },
-  };
+// const generateJoke = () => {
+//   const config = {
+//     headers: {
+//       Accept: "application/json",
+//     },
+//   };
 
-  axios.get("https://icanhazdadjoke.com", config).then((res) => {
-    document.getElementById("joke").innerHTML = res.data.joke;
-  });
-};
+//   axios.get("https://icanhazdadjoke.com", config).then((res) => {
+//     document.getElementById("joke").innerHTML = res.data.joke;
+//   });
+// };
 
-export default generateJoke;
+// export default generateJoke;
