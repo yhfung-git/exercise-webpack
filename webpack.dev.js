@@ -1,13 +1,11 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const common = require("./webpack.common");
+const { merge } = require("webpack-merge");
 
-module.exports = {
+module.exports = merge(common, {
   mode: "development",
-  entry: {
-    main: path.resolve(__dirname, "src/index.js"),
-  },
   output: {
-    filename: "[name].[contenthash].bundle.js",
+    filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
     assetModuleFilename: "[name][ext]",
@@ -23,33 +21,4 @@ module.exports = {
     compress: true,
     historyApiFallback: true,
   },
-  module: {
-    rules: [
-      {
-        test: /\.scss$/i,
-        use: ["style-loader", "css-loader", "sass-loader"],
-      },
-      {
-        test: /\.js$/i,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env"],
-          },
-        },
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
-      },
-    ],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: "Webpack Exercise",
-      filename: "index.html",
-      template: "src/template.html",
-    }),
-  ],
-};
+});
