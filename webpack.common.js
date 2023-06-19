@@ -1,17 +1,19 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, "src/index.js"),
-    vendor: path.resolve(__dirname, "src/vendor.js"),
+    main: {
+      import: path.resolve(__dirname, "src/index.js"),
+      dependOn: "shared",
+    },
+    vendor: {
+      import: path.resolve(__dirname, "src/vendor.js"),
+      dependOn: "shared",
+    },
+    shared: "bootstrap",
   },
   module: {
     rules: [
-      {
-        test: /\.scss$/i,
-        use: ["style-loader", "css-loader", "sass-loader"],
-      },
       {
         test: /\.js$/i,
         exclude: /node_modules/,
@@ -32,11 +34,10 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: "Webpack Exercise",
-      filename: "index.html",
-      template: "src/template.html",
-    }),
-  ],
+  optimization: {
+    runtimeChunk: "single",
+    splitChunks: {
+      chunks: "all",
+    },
+  },
 };
