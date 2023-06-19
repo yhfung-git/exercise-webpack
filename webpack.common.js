@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: {
     main: path.resolve(__dirname, "src/index.js"),
+    vendor: path.resolve(__dirname, "src/vendor.js"),
   },
   module: {
     rules: [
